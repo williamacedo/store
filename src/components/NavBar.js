@@ -19,7 +19,7 @@ const NavBar = ({ counter }) => {
 			    </div>
 			    <div className="item">			    
 				    <Link className="ui red button">
-				      <i class="cart icon"></i>
+				      <i className="cart icon"></i>
 				      ({counter}) Cart
 				    </Link>			    
 			    </div>

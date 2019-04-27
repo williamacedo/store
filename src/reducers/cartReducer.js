@@ -1,5 +1,3 @@
-import { GET_ALL_CATEGORIES } from '../types';
-
 const initialState = {
 	count: 0
 };

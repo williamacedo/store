@@ -2,9 +2,9 @@ import { GET_ALL_CATEGORIES } from '../types';
 
 const initialState = {
 	list:[
-		{key: 1, name: 'Jam', img: 'jam'},
-		{key: 2, name: 'Beer', img: 'beer'},
-		{key: 3, name: 'Wine', img: 'wine'}
+		{key: '1', name: 'Jam', img: 'jam'},
+		{key: '2', name: 'Beer', img: 'beer'},
+		{key: '3', name: 'Wine', img: 'wine'}
 	]
 };
 

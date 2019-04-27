@@ -7,10 +7,10 @@ class Home extends Component {
 		return (
 			<div className="ui padded segment">
 				<h2 className="ui header">SHOP FOR</h2>
-				<div class="ui link cards">
-					{this.props.categories && this.props.categories.map(category => {
+				<div className="ui link cards">
+					{this.props.categories && this.props.categories.map((category, index) => {
 						return (
-							<Card key={category.id} category={category} />
+							<Card key={index} category={category} />
 						);
 					})}
 				</div>
