@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const CardHover = ({ product }) => {
+const CardHover = ({ product, buyProduct }) => {
 	const [hover, setHover] = useState('hidden');
 	return (
 	  <div className="card" onMouseEnter={() => setHover('visible active fade in')} onMouseLeave={() => setHover('hidden fade out')}>
@@ -10,14 +9,18 @@ const CardHover = ({ product }) => {
 	      <div className={"ui dimmer transition "+hover}>
 	        <div className="content">
 	          <div className="center button-absolute-center">
-	            <Link to={"/product/" + product.key} className="ui inverted button">Buy</Link>
+	            <button onClick={(e) => {
+	            	let array = [];
+	            	array.push(product);
+	            	buyProduct(e, array, product.key)
+	            }} className="ui inverted button">Add to Cart</button>
 	          </div>
 	        </div>
 	      </div>
-	      <img alt="Product" src="https://semantic-ui.com/images/avatar/large/elliot.jpg" />
+	      <img alt="Product" src={require('../assets/products/'+product.img+'.jpg')} />
 	    </div>
 	    <div className="content">
-	      <Link to={"/product/" + product.key} className="header">{product.name}</Link>
+	      <p className="header">{product.name}</p>
 	    </div>
 	    <div className="extra content">
 	        <i className="cart icon"></i>

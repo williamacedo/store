@@ -18,14 +18,14 @@ const NavBar = ({ counter }) => {
 			      </div>
 			    </div>
 			    <div className="item">			    
-				    <Link className="ui red button">
+				    <Link to="/cart" className="ui red button">
 				      <i className="cart icon"></i>
 				      ({counter}) Cart
 				    </Link>			    
 			    </div>
 		    </div>		  
 		</div>
-	);
+	);	
 }
 
 export default NavBar;
