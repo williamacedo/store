@@ -31,7 +31,8 @@ const CardHover = ({ product, buyProduct }) => {
 }
 
 CardHover.propTypes = {
-	products: PropTypes.object
+	products: PropTypes.object,
+	buyProduct: PropTypes.func
 }
 
 export default CardHover;

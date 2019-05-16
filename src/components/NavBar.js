@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-const NavBar = ({ counter }) => {
+const NavBar = ({ counter, items, changeText, value }) => {
+	//console.log(items)
 	return (
 		<div className="ui secondary menu red">
 		  <NavLink to="/home" className="item">
@@ -11,13 +12,23 @@ const NavBar = ({ counter }) => {
 		    Catalog
 		  </NavLink>
 		  <div className="right menu">
-			    <div className="item">
-			      <div className="ui icon input">
-			        <input type="text" placeholder="Search all products..." />
-			        <i className="search link icon"></i>
-			      </div>
-			    </div>
-			    <div className="item">			    
+				<div className="ui search">
+				  <div className="ui icon input">
+				    <input className="prompt" type="text" value={value} placeholder="Search products..." onChange={e => changeText(e)} />
+				    <i className="search icon"></i>
+				  </div>
+				  <div className={value !== '' ? "results transition visible" : "results"}>
+				  {items && items.map(item => {
+				  	return (
+				  		<div className="searchItem">
+				  			<img alt="product" src={require(`../assets/products/${item.img}.jpg`)} className="searchItem_img" />
+				  			<p style={{marginLeft: '5px'}}>{item.name}</p>
+				  		</div>
+				  	);
+				  })}
+				  </div>
+				</div>	  
+			    <div className="item">			    		    
 				    <Link to="/cart" className="ui red button">
 				      <i className="cart icon"></i>
 				      ({counter}) Cart
