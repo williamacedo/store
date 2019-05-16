@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const CartItem = ({product}) => {
-
-	const [count, setCount] = useState(1);
-
 	return (
 		<div className="ui grid cartArea">
 		  <div className="ten wide column">
@@ -20,14 +17,9 @@ const CartItem = ({product}) => {
 		  	</div>
 		  </div>
 	  	  <div className="six wide column">
-	  	  	<div className="cartQtd">		    
-				    <button className="ui compact green icon button" onClick={() => setCount(count - 1)}>
-				      <i className="minus icon"></i>
-				    </button>
-				    <div className="cartCounter">{count}</div>	  	  	
-				    <button className="ui compact green icon button" onClick={() => setCount(count + 1)}>
-				      <i className="plus icon"></i>
-				    </button>			    	    			    		    
+	  	  	<div className="cartQtd cartQtd-end">	
+	  	  		<h3>Amount</h3>	    
+				<p>{product.qtd}</p>		    	    			    		    
 	  	  	</div>
 	  	  </div>						
 		</div>

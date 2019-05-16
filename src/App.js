@@ -8,6 +8,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 const CategoryList = lazy(() => import('./pages/CategoryList'));
 const Cart = lazy(() => import('./pages/Cart'));
+const Product = lazy(() => import('./pages/Product'));
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
     	    				<Route path="/home" component={Home} />
     	    				<Route path="/catalog" component={Catalog} /> 
                             <Route path="/category/:id" component={CategoryList} />
+                            <Route path="/product/:id" component={Product} />
                             <Route path="/cart" component={Cart} />                           
     	    			</Switch>
         			</Suspense>

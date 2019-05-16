@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const CardHover = ({ product, buyProduct }) => {
 	const [hover, setHover] = useState('hidden');
@@ -9,11 +10,7 @@ const CardHover = ({ product, buyProduct }) => {
 	      <div className={"ui dimmer transition "+hover}>
 	        <div className="content">
 	          <div className="center button-absolute-center">
-	            <button onClick={(e) => {
-	            	let array = [];
-	            	array.push(product);
-	            	buyProduct(e, array, product.key)
-	            }} className="ui inverted button">Add to Cart</button>
+	            <Link className="ui inverted button" to={'/product/'+product.key}>Buy</Link>
 	          </div>
 	        </div>
 	      </div>
@@ -36,3 +33,9 @@ CardHover.propTypes = {
 }
 
 export default CardHover;
+
+// (e) => {
+// 	            	let array = [];
+// 	            	array.push(product);
+// 	            	buyProduct(e, array, product.key)
+// 	            }

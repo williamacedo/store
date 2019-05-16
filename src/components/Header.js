@@ -20,6 +20,10 @@ class Header extends Component {
 		})
 	}
 
+	itemClick = () => {
+		this.setState({ value: '' })
+	}
+
 	render() {
 	    const filteredItems = this.props.items.filter(item => {
 	      return item.name.toLowerCase().includes(this.state.value.toLowerCase());
@@ -33,6 +37,7 @@ class Header extends Component {
 						items={filteredItems} 
 						changeText={this.changeText} 
 						value={this.state.value}
+						itemClick={this.itemClick}
 					/>				
 				</div>
 			</div>

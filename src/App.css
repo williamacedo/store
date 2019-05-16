@@ -59,9 +59,13 @@
 
 .cartQtd {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  height: 100%;
+  margin-top: 10px;
+}
+
+.cartQtd-end {
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .cartCounter {
@@ -91,4 +95,10 @@
   width: 50px;
   height: 50px;
   border-radius: 25px;
+}
+
+.linha {
+  border: 1px solid #CCC;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

@@ -10,7 +10,8 @@ export const incrementCounter = counter => {
 	}
 }
 
-export const addCart = (item, callback) => dispatch => {
+export const addCart = (item, qtd, callback) => dispatch => {
+	item.qtd = qtd;
 	dispatch({
 		type: ADD_CART,
 		payload: {

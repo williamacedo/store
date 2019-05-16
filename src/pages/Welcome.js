@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Welcome = () => {
 	return (
 		<div className="ui segment center aligned">
-			<p>Welcome to my shop, made with Reactjs, using librarys like redux, react-router and redux-persist, this shop was made thinking about the perfomace, testing and good pratices.</p>
+			<h1>Welcome to my shop</h1>
 			<p >By: William Macedo</p>
 			<div className="item">
 				<Link to="/home" className="ui button">

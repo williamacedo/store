@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-const NavBar = ({ counter, items, changeText, value }) => {
+const NavBar = ({ counter, items, changeText, value, itemClick }) => {
 	//console.log(items)
 	return (
 		<div className="ui secondary menu red">
@@ -20,10 +20,12 @@ const NavBar = ({ counter, items, changeText, value }) => {
 				  <div className={value !== '' ? "results transition visible" : "results"}>
 				  {items && items.map(item => {
 				  	return (
-				  		<div className="searchItem">
-				  			<img alt="product" src={require(`../assets/products/${item.img}.jpg`)} className="searchItem_img" />
-				  			<p style={{marginLeft: '5px'}}>{item.name}</p>
-				  		</div>
+				  		<Link to={'/product/' + item.key} onClick={() => itemClick()}>
+					  		<div className="searchItem" key={item.key}>
+					  			<img alt="product" src={require(`../assets/products/${item.img}.jpg`)} className="searchItem_img" />
+					  			<p style={{marginLeft: '5px'}}>{item.name}</p>
+					  		</div>
+				  		</Link>
 				  	);
 				  })}
 				  </div>
