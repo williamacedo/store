@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{67:function(e,a,t){"use strict";t.r(a);var n=t(0),c=t.n(n),l=t(9);a.default=function(){return c.a.createElement("div",{className:"ui segment center aligned"},c.a.createElement("h1",null,"Welcome to my shop"),c.a.createElement("p",null,"By: William Macedo"),c.a.createElement("div",{className:"item"},c.a.createElement(l.b,{to:"/home",className:"ui button"},c.a.createElement("i",{className:"home icon"}),"Go to Home")))}}}]);
+//# sourceMappingURL=10.a541a99d.chunk.js.map
