@@ -1,20 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, lazy } from 'react';
 import { connect } from 'react-redux';
-import Card from '../components/Card';
+import MainLayout from '../components/MainLayout';
+const HomePage = lazy(() => import('../components/home'));
 
 class Home extends Component {
 	render() {
 		return (
-			<div className="ui padded segment">
-				<h2 className="ui header">SHOP FOR</h2>
-				<div className="ui link cards">
-					{this.props.categories && this.props.categories.map((category, index) => {
-						return (
-							<Card key={index} category={category} />
-						);
-					})}
-				</div>
-			</div>
+			<MainLayout>
+				<HomePage categories={this.props.categories} />
+			</MainLayout>
 		);
 	}
 }

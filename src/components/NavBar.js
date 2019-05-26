@@ -20,8 +20,8 @@ const NavBar = ({ counter, items, changeText, value, itemClick }) => {
 				  <div className={value !== '' ? "results transition visible" : "results"}>
 				  {items && items.map(item => {
 				  	return (
-				  		<Link to={'/product/' + item.key} onClick={() => itemClick()}>
-					  		<div className="searchItem" key={item.key}>
+				  		<Link to={'/product/' + item.key} key={item.key} onClick={() => itemClick()}>
+					  		<div className="searchItem">
 					  			<img alt="product" src={require(`../assets/products/${item.img}.jpg`)} className="searchItem_img" />
 					  			<p style={{marginLeft: '5px'}}>{item.name}</p>
 					  		</div>

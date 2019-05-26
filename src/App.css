@@ -102,3 +102,32 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/*.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}*/
+
+.menuright {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuright_item {
+    width: 97px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuright_item_loggin {
+    width: 117px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divisor_login {
+  font-size: 16px;
+  margin: 10px;
+  font-weight: bold;
+}

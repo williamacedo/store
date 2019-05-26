@@ -1,35 +1,43 @@
 import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
 
 import './App.css';
-const Welcome = lazy(() => import('./pages/Welcome'));
-const Home = lazy(() => import('./pages/Home'));
-const Catalog = lazy(() => import('./pages/Catalog'));
-const CategoryList = lazy(() => import('./pages/CategoryList'));
-const Cart = lazy(() => import('./pages/Cart'));
-const Product = lazy(() => import('./pages/Product'));
+import Welcome from './pages/Welcome';
+import Home from './pages/Home';
+import Catalog from './pages/Catalog';
+import CategoryList from './pages/CategoryList';
+import Cart from './pages/Cart';
+import Product from './pages/Product';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Orders from './pages/Orders';
+import Profile from './pages/Profile';
+import LoginAdmin from './pages/admin/Login';
+import HomeAdmin from './pages/admin/Home';
+import ProductAdmin from './pages/admin/Product';
+import CategoriesAdmin from './pages/admin/Categories';
 
 class App extends Component {
   render() {
     return (
-    	<BrowserRouter>
+    	<BrowserRouter basename={process.env.PUBLIC_URL}>
     		<div>
-                <div className="ui block header">
-    			 <Header />
-                </div>
-                <div className="ui container">
-        			<Suspense fallback={<div className="ui loading segment"></div>}>
-    	    			<Switch>
-                            <Route path="/" exact component={Welcome} />
-    	    				<Route path="/home" component={Home} />
-    	    				<Route path="/catalog" component={Catalog} /> 
-                            <Route path="/category/:id" component={CategoryList} />
-                            <Route path="/product/:id" component={Product} />
-                            <Route path="/cart" component={Cart} />                           
-    	    			</Switch>
-        			</Suspense>
-                </div>
+    			<Switch>
+                    <Route path="/" exact component={Welcome} />
+    				<Route path="/home" component={Home} />
+    				<Route path="/catalog" component={Catalog} /> 
+                    <Route path="/category/:id" component={CategoryList} />
+                    <Route path="/product/:id" component={Product} />
+                    <Route path="/cart" component={Cart} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} />
+                    <Route path="/orders" component={Orders} />
+                    <Route path="/profile" component={Profile} />
+                    <Route path="/admin" exact component={LoginAdmin} />
+                    <Route path="/admin/home" component={HomeAdmin} />
+                    <Route path="/admin/categories" component={CategoriesAdmin} />
+                    <Route path="/admin/products" component={ProductAdmin} />                           
+    			</Switch>              
     		</div>
     	</BrowserRouter>
     );

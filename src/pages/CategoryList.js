@@ -1,7 +1,7 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component, lazy } from 'react';
 import { connect } from 'react-redux';
-const CardHover = lazy(() => import('../components/CardHover'));
-const Breadcrumb = lazy(() => import('../components/Breadcrumb'));
+import MainLayout from '../components/MainLayout';
+const CategoryPage = lazy(() => import('../components/category'));
 
 class CategoryList extends Component {
 
@@ -11,22 +11,13 @@ class CategoryList extends Component {
 		const filterName = category.filter(item => item.key === id);
 		const filteredProduct = products.filter(product => product.category === id);
 		return (
-			<div>
-				<Suspense fallback={<div className="ui loading segment"></div>}>
-					<Breadcrumb initialRoute={{name: 'Home', link: '/home'}} middleRoute={{name: 'Categories', link: '/home'}} finalRoute={{name: filterName[0].name}} />
-					<div className="ui padded segment">
-						<div className="ui special cards">
-							{filteredProduct.map((product, index) => {
-								return <CardHover 
-											key={index} 
-											product={product} 
-											buyProduct={this.buyProduct} 
-										/>;
-							})}
-						</div>
-					</div>
-				</Suspense>
-			</div>
+			<MainLayout>
+				<CategoryPage 
+					filteredProduct={filteredProduct}
+					filterName={filterName}
+					buyProduct={this.buyProduct}
+				/>
+			</MainLayout>
 		);
 	}
 }
