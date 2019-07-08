@@ -6,7 +6,6 @@ const SimpleInput = ({
   type,
   name,
   placeholder,
-  textChange,
   textValue,
   onChange,
   id
@@ -32,7 +31,6 @@ SimpleInput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  textChange: PropTypes.func.isRequired,
   textValue: PropTypes.string.isRequired
 };
 
